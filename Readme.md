@@ -4,7 +4,7 @@ Pour lancer le notebook sur kaggle il faut en créée un puis, choisir d'import�
 
 
 ## Cleaning et processing
-Un certain nombre de duplicata son présent donc on les retir.
+Un certain nombre de duplicata et qui ont été retiré.
 On convertie la valeur sentimental en bool, 0 ou 1.
 Les reviews possèdant des balises html, il a été utilisé des regex pour les enlevés.
 Remove des hastag et mention.
@@ -15,16 +15,13 @@ Si des emoji ou des url sont présente on les enlèves.
 La lemmatization est appliqué sur le texte.
 Ils sont par la suite tokenizer et vectorizer.
 
-J'ai essayer de trouvé une librairie pour les abréviations mais pas de résultat concluant (J'aurais pu le faire a la main mais y a beaucoup trop d'abréviation en anglais pour que j'en fasse un dictionnaire).
 
 # Model
 
-Une couche d'Embedding est nécessaire dans les modèle pour convertir les valeur numérique en un vecteur nécessaire.
+Une couche d'Embedding est nécessaire dans les modèles pour convertir les valeurs numérique en un vecteur nécessaire.
 
 J'ai réalisé un Lstm qui en 10 epoch arrive a 80 de acc et peut surement etre meilleur avec plus d'entainement.
 Puis le Conv1D est celui qui arrive le plus vite a 99 d'accuracy en 3 epochs avec 88 de validation_acc.
 Entrainement d'un TCN qui arrive 98 d'accuracy mais ou la validation_acc reste a 83.
-J'ai fournie aussi le code d'un bilstm mais le bilstm prends ENORMEMENT de temps a etre entrainé, du coup je ne fournie pas de résultat.
-
-Un modèle en .h5 a été fournit pour le lstm, TCN et Conv1d.
+J'ai fournie aussi le code d'un bilstm mais le bilstm prends ENORMEMENT de temps a etre entrainé.
 
